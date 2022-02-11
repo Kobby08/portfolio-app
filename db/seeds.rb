@@ -24,7 +24,7 @@ puts '10 blogs created!'
 puts 'Creating blogs ......'
 9.times do |portfolio|
   Portfolio.create!(
-    title: 'My portfolio {portfolio}',
+    title: "My portfolio #{portfolio}",
     subtitle: "Portfolio subtitle #{portfolio}",
     body:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
