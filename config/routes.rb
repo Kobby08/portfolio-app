@@ -7,5 +7,7 @@ Rails.application.routes.draw do
 
   # resources routes
   resources :portfolios, except: [:show]
-  resources :blogs
+  resources :blogs do
+    member { get :toggle_status }
+  end
 end
