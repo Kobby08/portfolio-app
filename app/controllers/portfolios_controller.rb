@@ -29,6 +29,11 @@ class PortfoliosController < ApplicationController
     end
   end
 
+  def destroy
+    @portfolio_item.destroy
+    redirect_to portfolios_path, notice: 'Portfolio removed!'
+  end
+
   private
 
   def portfolio_params
