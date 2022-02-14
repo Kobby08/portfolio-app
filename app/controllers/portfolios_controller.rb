@@ -1,7 +1,11 @@
 class PortfoliosController < ApplicationController
-  before_action :set_portfolio, except: %i[index new create]
+  before_action :set_portfolio, except: %i[index new create angular]
   def index
     @portfolio_items = Portfolio.all
+  end
+
+  def angular
+    @angular = Portfolio.angular
   end
 
   def show; end

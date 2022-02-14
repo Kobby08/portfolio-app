@@ -1,4 +1,7 @@
 # Setting up sample data for the application
+puts 'Creating topics..........'
+3.times { |topic| Topic.create!(title: "Topic #{topic}") }
+puts '3 topics created'
 
 puts 'Creating blogs ......'
 10.times do |blog|
@@ -17,15 +20,16 @@ puts 'Creating blogs ......'
 		like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default 
 		model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have 
 		evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
+    topic_id: Topic.last.id,
   )
 end
 puts '10 blogs created!'
 
 puts 'Creating blogs ......'
-9.times do |portfolio|
+8.times do |portfolio|
   Portfolio.create!(
     title: "My portfolio #{portfolio}",
-    subtitle: "Portfolio subtitle #{portfolio}",
+    subtitle: 'Ruby on Rails',
     body:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
 	  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
@@ -34,6 +38,17 @@ puts 'Creating blogs ......'
     thumb_image: 'https://place-hold.it/300x200',
   )
 end
+Portfolio.create!(
+  title: 'My portfolio 8',
+  subtitle: 'Angular',
+  body:
+    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+	  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+	  when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+  main_image: 'https://place-hold.it/600x300',
+  thumb_image: 'https://place-hold.it/300x200',
+)
+
 puts '9 portfolios created!'
 
 puts 'Creating skills ......'
