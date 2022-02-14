@@ -51,6 +51,13 @@ Portfolio.create!(
 
 puts '9 portfolios created!'
 
+puts 'Creating technologies ......'
+3.times do |technology|
+  p = Portfolio.last
+  p.technologies.create!(name: "Technology #{technology}")
+end
+puts '3 skills created ............'
+
 puts 'Creating skills ......'
 6.times do |skill|
   Skill.create!(
@@ -59,4 +66,5 @@ puts 'Creating skills ......'
     badge: 'https://place-hold.it/250x250',
   )
 end
+
 puts '6 skills created!'

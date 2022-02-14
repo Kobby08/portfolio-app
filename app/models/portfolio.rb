@@ -1,6 +1,9 @@
 class Portfolio < ApplicationRecord
   include Placeholder
 
+  # associations
+  has_many :technologies
+
   # validations
   validates_presence_of :title, :body, :main_image, :thumb_image
 
