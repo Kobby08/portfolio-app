@@ -4,6 +4,12 @@ class Portfolio < ApplicationRecord
   # associations
   has_many :technologies
 
+  # nested_attr
+  accepts_nested_attributes_for(
+    :technologies,
+    reject_if: lambda { |attr| attr['name'].blank? },
+  )
+
   # validations
   validates_presence_of :title, :body, :main_image, :thumb_image
 
