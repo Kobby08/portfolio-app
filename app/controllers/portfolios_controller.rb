@@ -1,13 +1,18 @@
 class PortfoliosController < ApplicationController
-  before_action :set_portfolio, except: %i[index new create]
+  before_action :set_portfolio, except: %i[index new create angular]
   def index
     @portfolio_items = Portfolio.all
+  end
+
+  def angular
+    @angular = Portfolio.angular
   end
 
   def show; end
 
   def new
     @portfolio_item = Portfolio.new
+    3.times { @portfolio_item.technologies.build }
   end
 
   def create
@@ -37,7 +42,9 @@ class PortfoliosController < ApplicationController
   private
 
   def portfolio_params
-    params.required(:portfolio).permit(:title, :subtitle, :body)
+    params
+      .required(:portfolio)
+      .permit(:title, :subtitle, :body, technologies_attributes: [:name])
   end
 
   def set_portfolio

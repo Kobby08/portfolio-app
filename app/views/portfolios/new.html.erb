@@ -12,9 +12,13 @@
     <%= f.label :body %>
     <%= f.text_field :body %>
   </div>
-  <div class="field">
-    <%#= f.label :thumb_image %>
-    <%#= f.input :thumb_image %>
-  </div>
+  <ul>
+    <%= f.fields_for(:technologies) do |tf| %>
+      <li>
+        <%= tf.label :name%>
+        <%= tf.text_field :name %>
+      </li>
+    <% end %>
+  </ul>
   <%= f.submit %>
 <% end %>
