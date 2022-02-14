@@ -1,11 +1,3 @@
-<%#  
-The difference between prefix_path and prefix_url
-prefix_path: gives the relative path of the url we are visiting. eg: (new_portfolio_path => /portfolios/new)
-- Mostly used for in-app redirection.
-prefix_url: gives the absolute path of the url we are visiting or want to redirect to. eg: (new_portfolio_url => localhost:3000/portfolios/new)
-- Mostly used in emails to specify the full url to a page.
-- Also accepts other args such as subdomains. eg: (portfolio_url, subdomain: "subdomain")
-%>
 <%= link_to "Create new Item", new_portfolio_path %>
 <h1>Portfolio Items</h1>
 <% @portfolio_items.each do |portfolio_item| %>
