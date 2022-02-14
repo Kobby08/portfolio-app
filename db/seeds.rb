@@ -52,5 +52,11 @@ Portfolio.create!(
 puts '9 portfolios created!'
 
 puts 'Creating skills ......'
-6.times { |skill| Skill.create!(title: "Skill #{skill}", percent_utilized: 15) }
+6.times do |skill|
+  Skill.create!(
+    title: "Skill #{skill}",
+    percent_utilized: 15,
+    badge: 'https://place-hold.it/250x250',
+  )
+end
 puts '6 skills created!'
