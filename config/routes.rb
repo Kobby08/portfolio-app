@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users,
+             path: '',
+             path_names: {
+               sign_in: 'login',
+               sign_up: 'register',
+               sign_out: 'logout',
+             }
+
   # custom routes
   root to: 'pages#home'
   get 'about', to: 'pages#about'
