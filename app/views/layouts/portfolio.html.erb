@@ -16,8 +16,6 @@
     <%= yield %>
     <%= render 'shared/nav', location: "bottom" %>
     <hr>
-    <% if session[:source] %>
-      Thanks for following me on <%=  session[:source] %>
-    <% end %>
+    <%= source_helper("portfolio") %>
   </body>
 </html>
