@@ -15,4 +15,8 @@ module ApplicationHelper
       content_tag(:p, greeting, class: 'source-greeting')
     end
   end
+
+  def set_copyright
+    KaydevViewTool::Renderer.copyright('Nana Quam', 'all rights reserved.')
+  end
 end
