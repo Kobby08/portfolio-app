@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><%= @page_title %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="keywords" content="<%= @seo_keywords%>">
-    <%# <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css"> %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -15,8 +17,7 @@
     <%= render 'shared/nav', location: "top" %>
     <%= login_helper %>
     <%= yield %>
-    <hr>
+    <%= set_copyright %>
     <%= source_helper("application") %>
   </body>
 </html>
-<%= set_copyright %>
