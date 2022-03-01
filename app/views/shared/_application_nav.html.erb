@@ -1,13 +1,12 @@
 <div class="masthead clearfix">
   <div class="inner">
     <h3 class="masthead-brand">Nana Quam</h3>
-    <nav>
-      <ul class="nav masthead-nav">
-        <li class="active"><%= link_to "About", about_me_path, class: "nav-link" %></li>
-        <li><%= link_to "Contact", contact_path, class: "nav-link" %></li>
-        <li><%= link_to "Portfolios", portfolios_path, class: "nav-link" %></li>
-        <li><%= link_to "Blogs", blogs_path, class: "nav-link" %></li>
-      </ul>
+    <nav class="nav masthead-nav">
+      <%= link_to "About", about_me_path, class: "nav-link" %>
+      <%= link_to "Contact", contact_path, class: "nav-link" %>
+      <%= link_to "Portfolios", portfolios_path, class: "nav-link" %>
+      <%= link_to "Blogs", blogs_path, class: "nav-link" %>
+      <%= login_helper("nav-link") %>
     </nav>
   </div>
 </div>
