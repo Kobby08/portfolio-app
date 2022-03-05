@@ -4,7 +4,7 @@ class BlogsController < ApplicationController
   access(
     all: %i[show index],
     user: {
-      except: %i[new create edit update destroy],
+      except: %i[new create edit update destroy toggle_status],
     },
     site_admin: :all,
   )
