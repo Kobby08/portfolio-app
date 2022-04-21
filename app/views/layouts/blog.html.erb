@@ -14,28 +14,15 @@
   <body>
     <%= render 'shared/blog_nav' %>
     <div class="container">
-      <!---------- start of blog header  ------>
-      <div class="blog-header">
-        <h1 class="blog-title">My Blog</h1>
-        <p class="lead blog-description">The official example template of creating a blog with Bootstrap.</p>
-        <%= link_to 'Write A New Blog', new_blog_path if logged_in?(:site_admin)%>
-      </div>
-      <!---------- end of blog header  ------>
+      <%= render "shared/blog_header" %>
       <div class="row">
         <div class="col-sm-8 blog-main">
           <%= yield %>
         </div>
         <%= render "shared/blog_sidebar" %>
       </div>
-      <footer class="blog-footer">
-        <p>Blog template built for <a href="http://getbootstrap.com">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-        <p>
-          <a href="#">Back to top</a>
-        </p>
-        <hr>
-        <%= source_helper("blog") %>
-        <%= set_copyright %>
-      </footer>
+      <%= render "shared/blog_footer" %>
+      <%= source_helper("blog") %>
     </div>
   </body>
 </html>
