@@ -62,3 +62,4 @@ gem 'jquery-rails'
 gem 'petergate', '~> 3.0'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.8'
 gem 'kaydev_view_tool', git: "https://github.com/Kobby08/kaydev_view_tool", branch: "main"
+gem 'kaminari'
