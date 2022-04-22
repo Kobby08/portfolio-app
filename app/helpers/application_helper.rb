@@ -1,5 +1,5 @@
 module ApplicationHelper
-  def login_helper(style= "")
+  def login_helper(style = '')
     unless current_user.is_a?(GuestUser)
       link_to 'Logout', destroy_user_session_path, method: :delete, class: style
     else
@@ -18,5 +18,28 @@ module ApplicationHelper
 
   def set_copyright
     KaydevViewTool::Renderer.copyright('Nana Quam', 'all rights reserved.')
+  end
+
+  def nav_items
+    [
+      { url: root_path, title: 'Home' },
+      { url: about_me_path, title: 'About Me' },
+      { url: contact_path, title: 'Contact' },
+      { url: blogs_path, title: 'Blog' },
+      { url: portfolios_path, title: 'Portfolio' },
+    ]
+  end
+
+  def nav_helper(tag_name, style)
+    nav_links = ''
+    nav_items.each do |item|
+      nav_links <<
+        "<#{tag_name}><a href='#{item[:url]}' class='#{style} #{active?(item[:url])}'>#{item[:title]}</a></#{tag_name}>"
+    end
+    nav_links.html_safe
+  end
+
+  def active?(path)
+    'active' if current_page?(path)
   end
 end
