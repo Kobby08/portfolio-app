@@ -18,6 +18,7 @@ class Portfolio < ApplicationRecord
     where(subtitle: 'Angular')
   end
 
+  scope :by_position, -> { order(position: :asc) }
   scope :ruby_on_rails, -> { where(subtitle: 'Ruby on Rails') }
 
   # callbacks

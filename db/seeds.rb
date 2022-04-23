@@ -36,6 +36,7 @@ puts 'Creating blogs ......'
 	  when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
     main_image: 'https://place-hold.it/600x300',
     thumb_image: 'https://place-hold.it/300x200',
+    position: portfolio + 1,
   )
 end
 Portfolio.create!(
@@ -47,6 +48,7 @@ Portfolio.create!(
 	  when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
   main_image: 'https://place-hold.it/600x300',
   thumb_image: 'https://place-hold.it/300x200',
+  position: 9,
 )
 
 puts '9 portfolios created!'
